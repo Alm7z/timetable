@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/groupSelectingFragment">
+
+    <fragment
+        android:id="@+id/timetableFragment"
+        android:name="com.almazsh.timetable.ui.timetable.TimetableFragment"
+        android:label="fragment_timetable"
+        tools:layout="@layout/fragment_timetable">
+        <action
+            android:id="@+id/action_timetableFragment_to_myPreferencesFragment"
+            app:destination="@id/myPreferencesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/groupSelectingFragment"
+        android:name="com.almazsh.timetable.ui.group_selecting.GroupSelectingFragment"
+        android:label="fragment_group_selecting"
+        tools:layout="@layout/fragment_group_selecting" />
+
+    <fragment
+        android:id="@+id/lessonsSelectingFragment"
+        android:name="com.almazsh.timetable.ui.lessons_selecting.LessonsSelectingFragment"
+        android:label="fragment_lessons_selecting"
+        tools:layout="@layout/fragment_lessons_selecting">
+        <action
+            android:id="@+id/action_lessonsSelectingFragment_to_timetableFragment"
+            app:destination="@id/timetableFragment"
+            app:popUpTo="@+id/main_graph" />
+        <argument
+            android:name="only_new"
+            app:argType="boolean" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/myPreferencesFragment"
+        android:name="com.almazsh.timetable.ui.prefs.MyPreferencesFragment"
+        android:label="MyPreferencesFragment"
+        tools:layout="@layout/fragment_prefs">
+        <action
+            android:id="@+id/action_myPreferencesFragment_to_groupSelectingFragment"
+            app:destination="@id/groupSelectingFragment"
+            app:popUpTo="@+id/main_graph" />
+    </fragment>
+
+
+    <action
+        android:id="@+id/action_global_lessonsSelectingFragment"
+        app:destination="@id/lessonsSelectingFragment" />
+
+</navigation>

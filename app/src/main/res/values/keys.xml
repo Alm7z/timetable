@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="key_reselect_group">reselect_group</string>
+    <string name="key_filter_elective_courses">filter_elective_courses</string>
+    <string name="key_reselect_courses">reselect_courses</string>
+    <string name="key_hide_day_start">hide_day_start</string>
+    <string name="key_hide_day_end">hide_day_end</string>
+    <string name="key_hide_all_empty_lessons">hide_all_empty_lessons</string>
+    <string name="key_server_base_url">server_base_url</string>
+    <string name="key_crash">crash</string>
+    <string name="key_unsubscribe_test1">unsubscribe_test1</string>
+    <string name="key_subscribe_test1">subscribe_test1</string>
+</resources>

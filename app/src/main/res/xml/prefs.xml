@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Общее">
+        <Preference
+            android:key="@string/key_reselect_group"
+            android:summary="Нажмите, чтобы перевыбрать"
+            android:title="@string/group_" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Курсы по выбору">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/key_filter_elective_courses"
+            android:summary="Позволяет отображать только нужные курсы по выбору"
+            android:title="Фильтрация курсов по выбору" />
+        <Preference
+            android:dependency="filter_elective_courses"
+            android:key="@string/key_reselect_courses"
+            android:title="Список отображаемых курсов" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Отображение расписания">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/key_hide_day_start"
+            android:title="Скрывать пустые пары в начале дня" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/key_hide_day_end"
+            android:title="Скрывать пустые пары в конце дня" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/key_hide_all_empty_lessons"
+            android:title="Скрывать все пустые пары" />
+    </PreferenceCategory>
+
+
+    <PreferenceCategory android:title="dev prefs">
+        <EditTextPreference
+            android:defaultValue="@string/default_base_url"
+            android:key="@string/key_server_base_url"
+            android:title="base url сервера" />
+        <Preference
+            android:key="@string/key_crash"
+            android:title="crash" />
+        <Preference
+            android:key="@string/key_subscribe_test1"
+            android:title="subscribe test1 topic" />
+        <Preference
+            android:key="@string/key_unsubscribe_test1"
+            android:title="unsubscribe test1 topic" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

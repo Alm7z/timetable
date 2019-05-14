@@ -1,0 +1,16 @@
+<resources>
+    <!--<string name="app_name">Timetable ITIS KFU</string>-->
+    <string name="app_name">Расписание ИТИС КФУ</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="select_courses">Выберите отображаемые курсы</string>
+
+    <string name="default_base_url">http://192.168.0.101/api/</string>
+    <!--<string name="default_base_url">http://192.168.43.27/api/</string>-->
+
+    <string name="group_">Группа: %1$s</string>
+
+    <string name="confirm">подтвердить</string>
+
+</resources>
