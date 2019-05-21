@@ -3,8 +3,8 @@ package com.almazsh.timetable.ui.generating_views
 import android.content.Context
 import android.view.View
 import android.widget.LinearLayout
-import com.almazsh.timetable.R
 import com.almazsh.timetable.AppPrefs
+import com.almazsh.timetable.R
 import com.almazsh.timetable.db.model.CourseSelection
 import com.almazsh.timetable.model.LessonInfo
 import kotlinx.android.synthetic.main.item_timetable_day.view.*
@@ -27,8 +27,12 @@ object DayView {
         }
         if (last != -1 && first != -1) {
             for ((i, lesson) in lessons.withIndex()) {
-//                val lesson = lessons[i]
+
                 if (AppPrefs.hideDayStart && i < first) {
+                    continue
+                }
+
+                if (AppPrefs.hideAllEmptyLessons && !mustShow(lesson, selectedCourses)) {
                     continue
                 }
 
@@ -51,6 +55,7 @@ object DayView {
                 if (AppPrefs.hideDayEnd && i == last) {
                     break
                 }
+
             }
         }
         return view
@@ -67,6 +72,5 @@ object DayView {
                             selectedCourses.any { it.selected && it.id == lessonGroupItem.id }
                         })
     }
-
 
 }
